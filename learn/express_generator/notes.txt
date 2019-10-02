@@ -22,3 +22,15 @@ http://localhost:3000
 
 ===
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/skeleton_website
+
+npm install -g nodemon
+
+"scripts": {
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www"
+  },
+
+  SET DEBUG=express-locallibrary-tutorial:* & npm run devstart
+
+  ---
+  https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose
