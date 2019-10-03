@@ -1,0 +1,51 @@
+Bismillah
+
+how to trigger changes in text area
+
+ip
+
+https://stackoverflow.com/questions/11338592/how-can-i-bind-to-the-change-event-of-a-textarea-in-jquery
+
+var button = $("#buttonId");
+$("#textareaID").on('input',function(e){
+  if(e.target.value === ''){
+    // Textarea has no value
+    button.hide();
+  } else {
+    // Textarea has a value
+    button.show();
+  }
+});
+-
+let textareaID = document.getElementById('textareaID');
+let yourBtnID = document.getElementById('yourBtnID');
+textareaID.addEventListener('input', function() {
+    yourBtnID.style.display = 'none';
+    if (textareaID.value.length) {
+        yourBtnID.style.display = 'inline-block';
+    }
+});
+-
+https://github.com/sophiebits/jquery-splendid-textchange
+-
+jQuery “splendid textchange” plugin
+This plugin provides a synthetic event called textchange which simulates the input event in all browsers, abstracting over cross-browser differences.
+
+Simply do:
+
+// <input type="text" id="monkey">
+
+$("#monkey").on("textchange", function() {
+    // ...
+});
+--
+https://html.com/attributes/textarea-onchange/
+-
+onchange vs. oninput
+Another JavaScript event that is quite similar to onchange is oninput. The difference is that oninput is triggered every time the value of an element changes even while it still is in focus. So, if we were to substitute oninput for onchange in the textarea code in the example above, we'd get the following rather annoying alert-generating textarea.
+
+
+
+Read more: https://html.com/attributes/textarea-onchange/#ixzz61FQeUA7w
+-
+https://www.w3schools.com/jquery/event_change.asp

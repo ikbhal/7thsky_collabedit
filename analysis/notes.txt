@@ -1,0 +1,32 @@
+Bismillah
+
+Insha allah
+{"op": "{\"ops\" : [[7, 50], [8, \"ing \"]], \"cuid\" : 18093889, \"id\" : 1205166967}"}
+
+#delete all
+{"op": "{\"ops\" : [[9, \"dafdaf\\npong say pong\\nping here , how are u pong\\n\\nping say lets code\\n\"]], \"cuid\" : 18093889, \"id\" : 1205168477}"}
+
+-
+post, http://collabedit.com/ot/post
+
+form data
+op: {"cuid":18093887,"parent_id":1205168477,"ops":[[8,"a"]]}
+parent_id: 1205168477
+-
+{"ok": "OK"}
+=
+post    http://collabedit.com/ot/wait
+form data
+guid: kkusd
+cuid: 18093887
+resync: false
+
+ponng added "b"
+{"op": "{\"ops\" : [[7, 1], [8, \"b\"]], \"cuid\" : 18093889, \"id\" : 1205169544}"}
+
+{"op": "{\"ops\" : [[7, 2], [8, \"c\"]], \"cuid\" : 18093887, \"id\" : 1205169969}"}
+--
+post http://collabedit.com/ot/post
+format data
+op: {"cuid":18093887,"parent_id":1205169544,"ops":[[7,2],[8,"c"]]}
+parent_id: 1205169544

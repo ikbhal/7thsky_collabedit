@@ -6,19 +6,27 @@
     <script src="../../socket.io/socket.io.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script>
-      var socket = io.connect("http://7thsky.in"); //for running locally with server.js
+      $(document).ready(function(){
+          $("#editArea").on("input", function(e){
+              console.log(e.target.value);
+              socket.emit("chat_message", $("#editArea").val());
+            });
+      });
+
+      //var socket = io.connect("http://7thsky.in"); //for running locally with server.js
+      var socket = io.connect("http://localhost:3000");
       //var socket = io.connect('http://localhost:3000'); //for running locally with server.js
       // var socket = io.connect('http://localhost:3000'); // for running with chat.js
       // submit text message without reload/refresh the page
       $("form").submit(function(e) {
         e.preventDefault(); // prevents page reloading
-        socket.emit("chat_message", $("#txt").val());
-        $("#txt").val("");
+        socket.emit("chat_message", $("#editArea").val());
         return false;
       });
       // append the chat text message
       socket.on("chat_message", function(msg) {
-        $("#messages").append($("<li>").html(msg));
+        //$("#messages").append($("<li>").html(msg));
+        $("#editArea").val(msg);
       });
       // append text if someone is online
       socket.on("is_online", function(username) {
@@ -31,6 +39,6 @@
   </head>
   <body>
     <h1>Collab edit</h1>
-    <textarea cols="50" rows="30"> </textarea>
+    <textarea id="editArea" cols="100" rows="30"> </textarea>
   </body>
 </html>

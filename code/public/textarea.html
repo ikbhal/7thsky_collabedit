@@ -1,0 +1,21 @@
+<html>
+<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+    $("#editArea").on("input", function(e){
+        console.log(e.target.value);
+        console.log(e);
+    });
+});
+</script>    
+</head>    
+<body>
+    <textarea id="editArea" rows="30" cols="40">
+
+    </textarea>
+    <br>
+
+</body>
+</html>        
